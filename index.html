@@ -441,19 +441,34 @@
 
   /* ========== RESPONSIVE ========== */
   @media (max-width: 600px) {
-    .header { flex-direction: column; text-align: center; }
+    .header { flex-direction: column; text-align: center; padding: 8px 12px; gap: 4px; }
+    .header-logo-placeholder img { height: 32px; }
     .header-tagline { display: none; }
-    .progress-strip { flex-direction: column; gap: 10px; align-items: center; }
+    .progress-strip { padding: 6px 12px; flex-direction: column; gap: 6px; align-items: center; }
     .progress-contact { display: none; }
-    .main-content { padding: 28px 20px 24px; }
-    .main-content h1 { font-size: 23px; }
-    .offer-image-section { padding: 0 20px 20px; }
-    .offer-image-section img { max-width: 100%; }
-    .benefits { padding: 20px; }
-    .benefits-grid { grid-template-columns: 1fr; max-width: 300px; }
-    .cta-section, .second-cta { padding-left: 20px; padding-right: 20px; }
     .progress-steps { gap: 0; }
-    .progress-connector { width: 24px; margin: 0 4px; }
+    .progress-connector { width: 20px; margin: 0 2px; }
+    .step-icon { width: 22px; height: 22px; font-size: 11px; }
+    .step-label { font-size: 11px; }
+    .approval-badge { padding: 6px 16px; font-size: 13px; margin-bottom: 8px; }
+    .approval-badge .badge-icon { width: 18px; height: 18px; font-size: 10px; }
+    .main-content { padding: 14px 16px 10px; }
+    .main-content h1 { font-size: 20px; margin-bottom: 4px; }
+    .main-content .subtitle { font-size: 13px; }
+    .offer-image-section { padding: 0 16px 8px; }
+    .offer-image-section img { max-width: 200px; }
+    .discount-section { padding: 0 16px 8px; }
+    .discount-tag { font-size: 12px; padding: 5px 16px; }
+    .cta-section { padding: 0 16px 10px; }
+    .cta-btn { padding: 14px; font-size: 16px; }
+    .trust-badges img { height: 28px; }
+    .trust-badges { gap: 6px; margin-top: 10px; }
+    .benefits { padding: 16px; }
+    .benefits-heading { font-size: 20px; margin-bottom: 14px; }
+    .benefits-grid { grid-template-columns: 1fr; max-width: 300px; }
+    .benefit-item { font-size: 15px; }
+    .second-cta { padding-left: 16px; padding-right: 16px; }
+    .second-cta .cta-btn-secondary { padding: 14px; font-size: 16px; }
   }
 
 </style>
