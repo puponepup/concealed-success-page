@@ -3,13 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WIREFRAME — Success Page Redesign v2 (Certified Concealed)</title>
+<title>Success — Certified Concealed First</title>
 <style>
   :root {
     --navy: #1D3557;
     --navy-dark: #152a47;
     --red: #C1272D;
-    --red-dark: #a11f24;
     --green: #28a745;
     --green-dark: #1e7e34;
     --cream: #f9f8f5;
@@ -29,12 +28,7 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  .page {
-    width: 100%;
-    background: var(--white);
-  }
-
-  /* ========== HEADER ========== */
+  /* ========== HEADER (full width) ========== */
   .header {
     background: var(--white);
     padding: 16px 24px;
@@ -71,14 +65,9 @@
     color: var(--text-dark);
   }
 
-  .header-tagline .tagline-text strong {
-    font-weight: bold;
-  }
-
-  /* ========== PROGRESS STEPS — visually distinct from competitor ========== */
+  /* ========== PROGRESS STRIP (full width) ========== */
   .progress-strip {
     background: #003156;
-    border-bottom: none;
     padding: 10px 24px;
     display: flex;
     align-items: center;
@@ -134,25 +123,10 @@
     background: transparent;
   }
 
-  .progress-step.done {
-    color: #ee0900;
-  }
-
-  .progress-step.done .step-icon {
-    background: #ee0900;
-    border-color: #ee0900;
-    color: var(--white);
-  }
-
-  .progress-step.active {
-    color: var(--white);
-  }
-
-  .progress-step.active .step-icon {
-    border-color: var(--white);
-    background: var(--white);
-    color: #003156;
-  }
+  .progress-step.done { color: #ee0900; }
+  .progress-step.done .step-icon { background: #ee0900; border-color: #ee0900; color: var(--white); }
+  .progress-step.active { color: var(--white); }
+  .progress-step.active .step-icon { border-color: var(--white); background: var(--white); color: #003156; }
 
   .progress-connector {
     width: 40px;
@@ -161,93 +135,64 @@
     margin: 0 8px;
   }
 
-  .progress-connector.done {
-    background: #ee0900;
+  .progress-connector.done { background: #ee0900; }
+
+  /* ========== WHITE CARD (centered, detached) ========== */
+  .card {
+    background: var(--white);
+    max-width: 720px;
+    margin: 28px auto;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0,0,0,.08);
+    overflow: hidden;
   }
 
-  /* ========== MAIN CONTENT CARD ========== */
-  .main-content {
-    padding: 36px 28px 32px;
+  /* ========== SUCCESS SECTION (top of card) ========== */
+  .success-section {
+    padding: 36px 32px 28px;
     text-align: center;
   }
 
-  .approval-badge {
+  .success-icon {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    background: #e8f5e9;
-    border: 1px solid #a5d6a7;
-    border-radius: 6px;
-    padding: 10px 20px;
-    margin-bottom: 20px;
-  }
-
-  .approval-badge .badge-icon {
-    width: 30px;
-    height: 30px;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
     background: var(--green);
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     color: var(--white);
-    font-size: 16px;
-    font-weight: bold;
-  }
-
-  .approval-badge .badge-label {
-    font-size: 15px;
-    font-weight: bold;
-    color: #2e7d32;
-  }
-
-  .main-content h1 {
     font-size: 28px;
-    line-height: 1.35;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+
+  .success-title {
+    font-size: 32px;
+    font-weight: bold;
     color: var(--navy);
-    margin-bottom: 8px;
+    margin-bottom: 14px;
+  }
+
+  .success-headline {
+    font-size: 22px;
     font-weight: bold;
+    color: var(--navy);
+    line-height: 1.4;
+    margin-bottom: 16px;
   }
 
-  .main-content .subtitle {
-    font-size: 16px;
-    line-height: 1.55;
-    color: var(--text-muted);
-    margin-bottom: 0;
-  }
-
-  /* ========== OFFER IMAGE (centered) ========== */
-  .offer-image-section {
-    padding: 0 28px 24px;
-    text-align: center;
-  }
-
-  .offer-image-section img {
-    max-width: 320px;
-    width: 100%;
-    height: auto;
-  }
-
-  /* ========== DISCOUNT TAG (centered) ========== */
-  .discount-section {
-    text-align: center;
-    padding: 0 28px 20px;
-  }
-
-  .discount-tag {
-    display: inline-block;
-    background: var(--red);
-    color: var(--white);
-    font-size: 14px;
+  .discount-text {
+    font-size: 20px;
     font-weight: bold;
-    padding: 8px 20px;
-    border-radius: 4px;
-    letter-spacing: 0.5px;
+    color: var(--green);
+    margin-bottom: 24px;
   }
 
-  /* ========== CTA ========== */
+  /* ========== PRIMARY CTA ========== */
   .cta-section {
-    padding: 0 28px 20px;
+    padding: 0 32px 12px;
+    text-align: center;
   }
 
   .cta-btn {
@@ -255,17 +200,17 @@
     width: 100%;
     max-width: 480px;
     margin: 0 auto;
-    padding: 18px 24px;
+    padding: 22px 28px;
     background: var(--green);
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
     color: var(--white);
-    font-size: 19px;
+    font-size: 22px;
     font-weight: bold;
     text-align: center;
     text-decoration: none;
     cursor: pointer;
-    box-shadow: 0 3px 12px rgba(40,167,69,.25);
+    box-shadow: 0 4px 16px rgba(40,167,69,.3);
     animation: pulse 2.5s infinite;
     letter-spacing: 0.3px;
   }
@@ -276,13 +221,6 @@
   }
 
   .cta-btn:hover { filter: brightness(1.06); }
-
-  .cta-sub {
-    text-align: center;
-    font-size: 12px;
-    color: #999;
-    margin-top: 10px;
-  }
 
   .trust-badges {
     display: flex;
@@ -298,9 +236,21 @@
     width: auto;
   }
 
+  /* ========== IMAGE SECTION ========== */
+  .offer-image-section {
+    padding: 20px 32px 8px;
+    text-align: center;
+  }
+
+  .offer-image-section img {
+    max-width: 280px;
+    width: 100%;
+    height: auto;
+  }
+
   /* ========== BENEFITS LIST ========== */
   .benefits {
-    padding: 24px 28px 28px;
+    padding: 24px 32px 28px;
     border-top: 1px solid var(--border);
   }
 
@@ -347,7 +297,7 @@
 
   /* ========== SECOND CTA ========== */
   .second-cta {
-    padding: 0 28px 28px;
+    padding: 0 32px 32px;
     text-align: center;
   }
 
@@ -356,45 +306,31 @@
     width: 100%;
     max-width: 480px;
     margin: 0 auto;
-    padding: 18px 24px;
+    padding: 22px 28px;
     background: var(--green);
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
     color: var(--white);
-    font-size: 19px;
+    font-size: 22px;
     font-weight: bold;
     text-align: center;
     text-decoration: none;
     cursor: pointer;
-    box-shadow: 0 3px 12px rgba(40,167,69,.25);
+    box-shadow: 0 4px 16px rgba(40,167,69,.3);
     animation: pulse 2.5s infinite;
     letter-spacing: 0.3px;
   }
 
   .second-cta .cta-btn-secondary:hover { filter: brightness(1.06); }
 
-  /* ========== TRUST STRIP ========== */
-  .trust-strip {
-    padding: 16px 28px;
-    border-top: 1px solid var(--border);
-    display: flex;
-    justify-content: center;
-    gap: 24px;
-    flex-wrap: wrap;
-  }
-
-  .trust-item {
-    font-size: 12px;
-    color: #999;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-  }
-
-  /* ========== FOOTER ========== */
+  /* ========== FOOTER (full width) ========== */
   .footer {
+    background: var(--white);
     padding: 20px 28px;
-    border-top: 1px solid var(--border);
+    max-width: 720px;
+    margin: 0 auto 28px;
+    border-radius: 10px;
+    box-shadow: 0 2px 12px rgba(0,0,0,.08);
   }
 
   .footer-links {
@@ -442,36 +378,38 @@
   /* ========== RESPONSIVE ========== */
   @media (max-width: 600px) {
     .header { flex-direction: column; text-align: center; padding: 10px 16px; gap: 4px; }
-    .header-logo-placeholder img { height: 36px; }
+    .header-logo-placeholder img { height: 44px; }
     .header-tagline { display: none; }
     .progress-strip { padding: 8px 12px; flex-direction: column; gap: 8px; align-items: center; }
     .progress-contact { display: none; }
     .progress-steps { gap: 0; }
     .progress-connector { width: 24px; margin: 0 4px; }
-    .main-content { padding: 20px 20px 14px; }
-    .main-content h1 { font-size: 22px; margin-bottom: 6px; }
-    .main-content .subtitle { font-size: 14px; }
-    .offer-image-section { padding: 0 20px 12px; }
-    .offer-image-section img { max-width: 240px; }
-    .discount-section { padding: 0 20px 12px; }
-    .cta-section { padding: 0 20px 14px; }
-    .cta-btn { padding: 15px; font-size: 15px; white-space: nowrap; }
+    .card { margin: 16px 12px; border-radius: 8px; }
+    .success-section { padding: 24px 20px 18px; }
+    .success-icon { width: 42px; height: 42px; font-size: 22px; margin-bottom: 12px; }
+    .success-title { font-size: 26px; margin-bottom: 10px; }
+    .success-headline { font-size: 18px; margin-bottom: 12px; }
+    .discount-text { font-size: 17px; margin-bottom: 18px; }
+    .cta-section { padding: 0 20px 10px; }
+    .cta-btn { padding: 18px 20px; font-size: 17px; white-space: nowrap; }
     .trust-badges img { height: 32px; }
     .trust-badges { gap: 8px; margin-top: 12px; }
+    .offer-image-section { padding: 14px 20px 8px; }
+    .offer-image-section img { max-width: 200px; }
     .benefits { padding: 20px; }
     .benefits-heading { font-size: 22px; margin-bottom: 16px; }
     .benefits-grid { grid-template-columns: 1fr; max-width: 300px; }
     .benefit-item { font-size: 16px; }
-    .second-cta { padding-left: 20px; padding-right: 20px; }
-    .second-cta .cta-btn-secondary { padding: 15px; font-size: 15px; white-space: nowrap; }
+    .second-cta { padding: 0 20px 24px; }
+    .second-cta .cta-btn-secondary { padding: 18px 20px; font-size: 17px; white-space: nowrap; }
+    .footer { margin: 0 12px 16px; border-radius: 8px; }
   }
 
 </style>
 </head>
 <body>
-<div class="page">
 
-  <!-- ===== HEADER ===== -->
+  <!-- ===== HEADER (full width) ===== -->
   <div class="header">
     <div class="header-logo-placeholder">
       <img src="logo.png" alt="Certified Concealed First">
@@ -482,7 +420,7 @@
     </div>
   </div>
 
-  <!-- ===== PROGRESS STEPS + CONTACT ===== -->
+  <!-- ===== PROGRESS STRIP (full width) ===== -->
   <div class="progress-strip">
     <div class="progress-steps">
       <div class="progress-step done">
@@ -506,86 +444,86 @@
     </div>
   </div>
 
-  <!-- ===== CONFIRMATION + HEADLINE ===== -->
-  <div class="main-content">
-    <div class="approval-badge">
-      <div class="badge-icon">✓</div>
-      <div class="badge-label">Eligibility Confirmed</div>
+  <!-- ===== WHITE CARD ===== -->
+  <div class="card">
+
+    <!-- SUCCESS + HEADLINE + DISCOUNT + CTA -->
+    <div class="success-section">
+      <div class="success-icon">✓</div>
+      <div class="success-title">Success!</div>
+      <div class="success-headline">We are eligible to expedite your<br>concealed carry permit.</div>
+      <div class="discount-text">50% Off Discount</div>
     </div>
-    <h1>You Qualify — Your Application<br>Is Ready to Be Processed</h1>
-    <p class="subtitle">Based on your answers, you meet all requirements. Claim your priority rate below to access your pre-filled application portal.</p>
-  </div>
 
-  <!-- ===== CENTERED IMAGE ===== -->
-  <div class="offer-image-section">
-    <img src="permit-image.png" alt="Application Form for Permit — Rush Processing">
-  </div>
-
-  <!-- ===== DISCOUNT TAG (centered) ===== -->
-  <div class="discount-section">
-    <div class="discount-tag">SAVE 50% — TODAY ONLY</div>
-  </div>
-
-  <!-- ===== PRIMARY CTA ===== -->
-  <div class="cta-section">
-    <a href="#" class="cta-btn">Claim My Application Portal Access →</a>
-    <div class="trust-badges">
-      <img src="badge-ssl.png" alt="SSL Encrypted">
-      <img src="badge-clickbank.png" alt="ClickBank Secured">
-      <img src="badge-guarantee.png" alt="60-Day Money Back">
-      <img src="badge-support.png" alt="US-Based Support">
-    </div>
-  </div>
-
-  <!-- ===== BENEFITS — 2-col grid with navy dots ===== -->
-  <div class="benefits">
-    <div class="benefits-heading">What's Included With Your Portal Access</div>
-    <div class="benefits-grid">
-      <div class="benefit-item">
-        <div class="b-icon">✓</div>
-        <span><strong>Expedited</strong> application processing</span>
-      </div>
-      <div class="benefit-item">
-        <div class="b-icon">✓</div>
-        <span>Apply entirely <strong>from home</strong></span>
-      </div>
-      <div class="benefit-item">
-        <div class="b-icon">✓</div>
-        <span><strong>Pre-filled</strong> application forms</span>
-      </div>
-      <div class="benefit-item">
-        <div class="b-icon">✓</div>
-        <span><strong>No</strong> shooting range visit</span>
-      </div>
-      <div class="benefit-item">
-        <div class="b-icon">✓</div>
-        <span><strong>No</strong> fingerprinting needed</span>
-      </div>
-      <div class="benefit-item">
-        <div class="b-icon">✓</div>
-        <span>Skip government <strong>office lines</strong></span>
-      </div>
-      <div class="benefit-item">
-        <div class="b-icon">✓</div>
-        <span>Recognized in <strong>28+ states</strong></span>
-      </div>
-      <div class="benefit-item">
-        <div class="b-icon">✓</div>
-        <span><strong>Act now</strong> — laws may change</span>
+    <div class="cta-section">
+      <a href="#" class="cta-btn">Continue</a>
+      <div class="trust-badges">
+        <img src="badge-ssl.png" alt="SSL Encrypted">
+        <img src="badge-clickbank.png" alt="ClickBank Secured">
+        <img src="badge-guarantee.png" alt="60-Day Money Back">
+        <img src="badge-support.png" alt="US-Based Support">
       </div>
     </div>
-  </div>
 
-  <!-- ===== SECOND CTA ===== -->
-  <div class="second-cta">
-    <a href="#" class="cta-btn-secondary">Get Started — Access My Application Now</a>
-    <div class="trust-badges">
-      <img src="badge-ssl.png" alt="SSL Encrypted">
-      <img src="badge-clickbank.png" alt="ClickBank Secured">
-      <img src="badge-guarantee.png" alt="60-Day Money Back">
-      <img src="badge-support.png" alt="US-Based Support">
+    <!-- IMAGE + BENEFITS -->
+    <div class="offer-image-section">
+      <img src="permit-image.png" alt="Concealed Carry Permit — Rush Processing">
     </div>
-  </div>
+
+    <div class="benefits">
+      <div class="benefits-heading">What's Included</div>
+      <div class="benefits-grid">
+        <div class="benefit-item">
+          <div class="b-icon">✓</div>
+          <span><em>Rush</em> service</span>
+        </div>
+        <div class="benefit-item">
+          <div class="b-icon">✓</div>
+          <span>Highest chance of <strong>approval</strong></span>
+        </div>
+        <div class="benefit-item">
+          <div class="b-icon">✓</div>
+          <span>Thousands of permits processed</span>
+        </div>
+        <div class="benefit-item">
+          <div class="b-icon">✓</div>
+          <span>Do it from <em>home</em></span>
+        </div>
+        <div class="benefit-item">
+          <div class="b-icon">✓</div>
+          <span>Avoid government agencies</span>
+        </div>
+        <div class="benefit-item">
+          <div class="b-icon">✓</div>
+          <span><u>No range</u> time required</span>
+        </div>
+        <div class="benefit-item">
+          <div class="b-icon">✓</div>
+          <span><u>No police</u> station visit</span>
+        </div>
+        <div class="benefit-item">
+          <div class="b-icon">✓</div>
+          <span><u>No fingerprinting</u> or photograph required</span>
+        </div>
+        <div class="benefit-item">
+          <div class="b-icon">✓</div>
+          <span><em>Take advantage before laws change!</em></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECOND CTA -->
+    <div class="second-cta">
+      <a href="#" class="cta-btn-secondary">Proceed Now</a>
+      <div class="trust-badges">
+        <img src="badge-ssl.png" alt="SSL Encrypted">
+        <img src="badge-clickbank.png" alt="ClickBank Secured">
+        <img src="badge-guarantee.png" alt="60-Day Money Back">
+        <img src="badge-support.png" alt="US-Based Support">
+      </div>
+    </div>
+
+  </div><!-- /card -->
 
   <!-- ===== FOOTER ===== -->
   <div class="footer">
@@ -611,6 +549,5 @@
     </div>
   </div>
 
-</div>
 </body>
 </html>
