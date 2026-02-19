@@ -61,7 +61,7 @@
 
   /* ========== PROGRESS STRIP (full width) ========== */
   .progress-strip {
-    background: #0b1a2e;
+    background: #003257;
     padding: 24px 32px;
     display: flex;
     align-items: center;
@@ -121,21 +121,21 @@
     background: rgba(255,255,255,0.85);
     clip-path: inherit;
     z-index: -2;
-    filter: blur(3px);
+    filter: blur(4px);
   }
 
   .chevron-step.active::after {
     content: '';
     position: absolute;
     inset: 3px;
-    background: #0b1a2e;
+    background: #003257;
     clip-path: polygon(0 0, calc(100% - 25px) 0, 100% 50%, calc(100% - 25px) 100%, 0 100%, 25px 50%);
     z-index: -1;
   }
 
   .chevron-step.upcoming {
-    background: #7a8a9e;
-    color: #556677;
+    background: #c0ccd8;
+    color: #fff;
     z-index: 1;
   }
 
