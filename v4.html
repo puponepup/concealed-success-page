@@ -200,7 +200,7 @@
     margin: 0 auto;
   }
 
-  .main-headline .discount-pill {
+  .discount-pill {
     display: inline-block;
     background: #fff3cd;
     border: 1.5px solid #ffc107;
@@ -209,7 +209,7 @@
     font-weight: 800;
     padding: 6px 18px;
     border-radius: 50px;
-    margin-top: 14px;
+    margin-bottom: 14px;
   }
 
   /* ========== CONTENT ROW ========== */
@@ -224,6 +224,10 @@
     flex: 0 0 44%;
     padding-right: 32px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
   }
 
   .image-side img {
@@ -231,10 +235,61 @@
     height: auto;
   }
 
+  /* Testimonial card under permit image */
+  .testimonial-card {
+    background: #f8f9fb;
+    border-radius: 10px;
+    padding: 16px 18px;
+    text-align: left;
+    width: 100%;
+  }
+
+  .t-stars {
+    color: #f5a623;
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+
+  .t-quote {
+    font-size: 13px;
+    color: var(--text-dark);
+    line-height: 1.55;
+    font-style: italic;
+    margin-bottom: 10px;
+  }
+
+  .t-author {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+  }
+
+  .t-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--navy);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    letter-spacing: 0.5px;
+  }
+
+  .t-name {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-muted);
+  }
+
   /* Vertical separator between image and benefits */
   .col-divider {
     width: 1px;
-    background: #e2e4e8;
+    background: #e8eaed;
     align-self: stretch;
     flex-shrink: 0;
     margin: 0;
@@ -283,10 +338,7 @@
     font-weight: 600;
     color: var(--text-dark);
     line-height: 1.4;
-    border-bottom: 1px solid #f0f1f3;
   }
-
-  .checklist li:last-child { border-bottom: none; }
 
   .checklist li .chk {
     flex-shrink: 0;
@@ -310,7 +362,7 @@
     text-align: center;
     font-size: 13px;
     color: var(--text-muted);
-    padding: 0 40px 6px;
+    margin-top: 10px;
     line-height: 1.5;
   }
 
@@ -436,8 +488,9 @@
     .main-headline h1 { font-size: 24px; }
     .main-headline .sub-text { font-size: 15px; }
     .content-row { flex-direction: column-reverse; padding: 0 16px 24px; gap: 20px; }
-    .image-side { flex: none; padding-right: 0; text-align: center; }
-    .image-side img { max-width: 260px; }
+    .image-side { flex: none; padding-right: 0; text-align: center; align-items: stretch; }
+    .image-side img { max-width: 260px; align-self: center; }
+    .testimonial-card { text-align: left; }
     .col-divider { display: none; }
     .benefits-side { padding-left: 0; width: 100%; }
     .benefits-title { font-size: 22px; }
@@ -510,13 +563,20 @@
     <div class="main-headline">
       <h1>Your Application Is Cleared.<br>Your Priority Spot Is Waiting.</h1>
       <p class="sub-text">We are eligible to expedite your concealed carry application — complete it now from home, no office visits required.</p>
-      <div class="discount-pill">⚡ Save 50% — Today Only</div>
     </div>
 
     <!-- IMAGE + BENEFITS SIDE BY SIDE -->
     <div class="content-row">
       <div class="image-side">
         <img src="permit-image.png?v=5" alt="Concealed Carry Application — Rush Processing">
+        <div class="testimonial-card">
+          <div class="t-stars">★★★★★</div>
+          <p class="t-quote">"Had my priority confirmation in less than 24 hours. The process was completely online — no driving, no waiting rooms."</p>
+          <div class="t-author">
+            <div class="t-avatar">RJ</div>
+            <div class="t-name">Robert J. — San Antonio, TX</div>
+          </div>
+        </div>
       </div>
 
       <!-- Vertical divider line -->
@@ -524,7 +584,7 @@
 
       <div class="benefits-side">
         <div class="benefits-title-wrap">
-          <div class="benefits-title">Your Exclusive Benefits:</div>
+          <div class="benefits-title">What You Get Today:</div>
           <svg viewBox="0 0 175 10" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:block; width:175px; height:10px; margin-top:3px;">
             <path d="M2 7 C15 3.5, 32 8.5, 50 5.5 C68 2.5, 86 8, 105 5 C124 2, 142 7.5, 158 5 C166 3.5, 172 6, 173 5.5" stroke="#f5a623" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
             <path d="M3 8.5 C18 6, 38 9, 58 7 C78 5, 98 8.5, 118 6.5 C138 4.5, 156 7.8, 170 6.5" stroke="#f5a623" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.45"/>
@@ -563,12 +623,11 @@
       </div>
     </div>
 
-    <!-- URGENCY (copy-based, no aggressive red box) -->
-    <p class="urgency-note">⚠️ This 50% discount disappears when you leave this page. <strong>Take advantage before laws change.</strong></p>
-
     <!-- CTA -->
     <div class="cta-row">
+      <div class="discount-pill">⚡ Save 50% — Today Only</div>
       <a href="#" class="cta-primary">Secure My Priority Spot Now <span class="cta-arrow">→</span></a>
+      <p class="urgency-note">This discount disappears when you leave this page. <strong>Take advantage before laws change.</strong></p>
       <div class="trust-badges">
         <img src="badge-ssl.png" alt="SSL Encrypted">
         <img src="badge-clickbank.png" alt="ClickBank Secured">
