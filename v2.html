@@ -61,18 +61,82 @@
 
   /* ========== PROGRESS STRIP (full width) ========== */
   .progress-strip {
-    background: linear-gradient(180deg, #0a2e4d 0%, #003156 100%);
-    padding: 18px 32px;
+    background: #0b1a2e;
+    padding: 24px 32px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 3px solid rgba(0,0,0,.15);
   }
 
-  .progress-steps {
+  .chevron-steps {
     display: flex;
     align-items: center;
-    gap: 0;
+  }
+
+  .chevron-step {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 58px;
+    padding: 0 38px 0 44px;
+    font-size: 16px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    clip-path: polygon(0 0, calc(100% - 28px) 0, 100% 50%, calc(100% - 28px) 100%, 0 100%, 28px 50%);
+    margin-left: -14px;
+    z-index: 1;
+  }
+
+  .chevron-step:first-child {
+    clip-path: polygon(0 0, calc(100% - 28px) 0, 100% 50%, calc(100% - 28px) 100%, 0 100%);
+    padding-left: 28px;
+    margin-left: 0;
+    border-radius: 4px 0 0 4px;
+  }
+
+  .chevron-step.done {
+    background: #28a745;
+    color: #fff;
+    z-index: 3;
+  }
+
+  .chevron-step .chevron-check {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .chevron-step.active {
+    color: #fff;
+    z-index: 2;
+    background: transparent;
+  }
+
+  .chevron-step.active::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0.85);
+    clip-path: inherit;
+    z-index: -2;
+    filter: blur(3px);
+  }
+
+  .chevron-step.active::after {
+    content: '';
+    position: absolute;
+    inset: 3px;
+    background: #0b1a2e;
+    clip-path: polygon(0 0, calc(100% - 25px) 0, 100% 50%, calc(100% - 25px) 100%, 0 100%, 25px 50%);
+    z-index: -1;
+  }
+
+  .chevron-step.upcoming {
+    background: #7a8a9e;
+    color: #556677;
+    z-index: 1;
   }
 
   .progress-contact {
@@ -89,50 +153,9 @@
     display: flex;
     align-items: center;
     gap: 6px;
-    transition: color .2s;
   }
 
   .progress-contact a:hover { color: var(--white); }
-
-  .progress-step {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 13px;
-    font-weight: 700;
-    color: rgba(255,255,255,.35);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-
-  .progress-step .step-icon {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    border: 2px solid rgba(255,255,255,.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 13px;
-    font-weight: bold;
-    color: rgba(255,255,255,.35);
-    background: transparent;
-  }
-
-  .progress-step.done { color: #ee0900; }
-  .progress-step.done .step-icon { background: #ee0900; border-color: #ee0900; color: var(--white); }
-  .progress-step.active { color: var(--white); }
-  .progress-step.active .step-icon { border-color: #28a745; background: #28a745; color: var(--white); }
-
-  .progress-connector {
-    width: 48px;
-    height: 4px;
-    background: rgba(255,255,255,.15);
-    margin: 0 10px;
-    border-radius: 2px;
-  }
-
-  .progress-connector.done { background: #28a745; }
 
   /* ========== WHITE CARD (centered, detached) ========== */
   .card {
@@ -375,10 +398,14 @@
     .header { flex-direction: column; text-align: center; padding: 10px 16px; gap: 4px; }
     .header-logo-placeholder img { height: 56px; }
     .header-badges { display: none; }
-    .progress-strip { padding: 20px 12px; flex-direction: column; gap: 8px; align-items: center; }
+    .progress-strip { padding: 16px 10px; justify-content: center; }
     .progress-contact { display: none; }
-    .progress-steps { gap: 0; }
-    .progress-connector { width: 28px; height: 4px; margin: 0 6px; }
+    .chevron-step { height: 46px; padding: 0 28px 0 34px; font-size: 12px; letter-spacing: 1.5px; }
+    .chevron-step:first-child { padding-left: 20px; }
+    .chevron-step .chevron-check { font-size: 16px; }
+    .chevron-step { clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 50%, calc(100% - 20px) 100%, 0 100%, 20px 50%); margin-left: -10px; }
+    .chevron-step:first-child { clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 50%, calc(100% - 20px) 100%, 0 100%); margin-left: 0; }
+    .chevron-step.active::after { clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 50%, calc(100% - 18px) 100%, 0 100%, 18px 50%); }
     .card { margin: 16px 12px; border-radius: 8px; }
     .success-section { padding: 24px 20px 18px; }
     .success-icon { width: 42px; height: 42px; margin-bottom: 12px; }
@@ -418,19 +445,15 @@
 
   <!-- ===== PROGRESS STRIP (full width) ===== -->
   <div class="progress-strip">
-    <div class="progress-steps">
-      <div class="progress-step done">
-        <div class="step-icon">✓</div>
+    <div class="chevron-steps">
+      <div class="chevron-step done">
+        <span class="chevron-check">✓</span>
         <span>Verify</span>
       </div>
-      <div class="progress-connector done"></div>
-      <div class="progress-step active">
-        <div class="step-icon">2</div>
+      <div class="chevron-step active">
         <span>Approve</span>
       </div>
-      <div class="progress-connector"></div>
-      <div class="progress-step">
-        <div class="step-icon">3</div>
+      <div class="chevron-step upcoming">
         <span>Apply</span>
       </div>
     </div>
