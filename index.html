@@ -48,21 +48,15 @@
     width: auto;
   }
 
-  .header-tagline {
+  .header-badges {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
   }
 
-  .header-tagline img {
-    height: 36px;
+  .header-badges img {
+    height: 52px;
     width: auto;
-  }
-
-  .header-tagline .tagline-text {
-    font-size: 15px;
-    line-height: 1.35;
-    color: var(--text-dark);
   }
 
   /* ========== PROGRESS STRIP (full width) ========== */
@@ -379,7 +373,7 @@
   @media (max-width: 600px) {
     .header { flex-direction: column; text-align: center; padding: 10px 16px; gap: 4px; }
     .header-logo-placeholder img { height: 44px; }
-    .header-tagline { display: none; }
+    .header-badges { display: none; }
     .progress-strip { padding: 8px 12px; flex-direction: column; gap: 8px; align-items: center; }
     .progress-contact { display: none; }
     .progress-steps { gap: 0; }
@@ -414,9 +408,9 @@
     <div class="header-logo-placeholder">
       <img src="logo.png" alt="Certified Concealed First">
     </div>
-    <div class="header-tagline">
-      <img src="time-icon.png" alt="">
-      <div class="tagline-text">Apply for a Concealed Carry Permit<br><strong>in less than 30 minutes!</strong></div>
+    <div class="header-badges">
+      <img src="badge-fast.png" alt="Fast & Simple Process — Average completion time: 15-25 minutes">
+      <img src="badge-rating.png" alt="Excellent Service Rating — 4.9/5 from 68,000+ Verified Customers">
     </div>
   </div>
 
@@ -467,7 +461,7 @@
 
     <!-- IMAGE + BENEFITS -->
     <div class="offer-image-section">
-      <img src="permit-image.png" alt="Concealed Carry Permit — Rush Processing">
+      <img src="permit-image.png?v=2" alt="Concealed Carry Permit — Rush Processing">
     </div>
 
     <div class="benefits">
