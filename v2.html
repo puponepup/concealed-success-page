@@ -98,7 +98,7 @@
   }
 
   .chevron-step.done {
-    background: #28a745;
+    background: #C1272D;
     color: #fff;
     z-index: 3;
   }
@@ -109,33 +109,14 @@
   }
 
   .chevron-step.active {
-    color: #fff;
+    background: #ffffff;
+    color: #003257;
     z-index: 2;
-    background: transparent;
-  }
-
-  .chevron-step.active::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: rgba(255,255,255,0.85);
-    clip-path: inherit;
-    z-index: -2;
-    filter: blur(4px);
-  }
-
-  .chevron-step.active::after {
-    content: '';
-    position: absolute;
-    inset: 3px;
-    background: #003257;
-    clip-path: polygon(0 0, calc(100% - 25px) 0, 100% 50%, calc(100% - 25px) 100%, 0 100%, 25px 50%);
-    z-index: -1;
   }
 
   .chevron-step.upcoming {
-    background: #c0ccd8;
-    color: #fff;
+    background: #8a9aad;
+    color: #c5cfda;
     z-index: 1;
   }
 
@@ -405,7 +386,6 @@
     .chevron-step .chevron-check { font-size: 16px; }
     .chevron-step { clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 50%, calc(100% - 20px) 100%, 0 100%, 20px 50%); margin-left: -10px; }
     .chevron-step:first-child { clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 50%, calc(100% - 20px) 100%, 0 100%); margin-left: 0; }
-    .chevron-step.active::after { clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 50%, calc(100% - 18px) 100%, 0 100%, 18px 50%); }
     .card { margin: 16px 12px; border-radius: 8px; }
     .success-section { padding: 24px 20px 18px; }
     .success-icon { width: 42px; height: 42px; margin-bottom: 12px; }
