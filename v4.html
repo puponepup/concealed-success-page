@@ -435,13 +435,15 @@
     .main-headline { padding: 0 20px 20px; }
     .main-headline h1 { font-size: 24px; }
     .main-headline .sub-text { font-size: 15px; }
-    .content-row { flex-direction: column; padding: 0 20px 24px; gap: 24px; }
-    .image-side { flex: none; padding-right: 0; }
-    .image-side img { max-width: 280px; }
+    .content-row { flex-direction: column-reverse; padding: 0 16px 24px; gap: 20px; }
+    .image-side { flex: none; padding-right: 0; text-align: center; }
+    .image-side img { max-width: 260px; }
     .col-divider { display: none; }
-    .benefits-side { padding-left: 0; }
-    .benefits-title { font-size: 19px; }
-    .checklist li { font-size: 14px; padding: 8px 0; }
+    .benefits-side { padding-left: 0; width: 100%; }
+    .benefits-title { font-size: 22px; }
+    .checklist li { font-size: 16px; padding: 10px 0; gap: 12px; }
+    .checklist li .chk { width: 26px; height: 26px; flex-shrink: 0; }
+    .checklist li .chk svg { width: 13px; height: 13px; }
     .urgency-note { padding: 0 20px 4px; font-size: 12px; }
     .cta-row { padding: 0 16px 28px; }
     .cta-primary { padding: 20px 16px; font-size: 18px; }
