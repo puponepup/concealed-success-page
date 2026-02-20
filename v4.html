@@ -143,19 +143,23 @@
     margin-bottom: 10px;
   }
   .main-headline .sub-text {
-    font-size: 17px;
+    font-size: 19px;
     color: var(--text-muted);
     font-weight: 400;
     line-height: 1.6;
     max-width: 480px;
     margin: 0 auto;
   }
-  /* 50% OFF — supporting, not screaming */
+  .main-headline .sub-text strong {
+    color: var(--navy);
+    font-weight: 800;
+  }
+  /* 50% OFF — present but not screaming */
   .offer-label {
-    font-size: 16px;
-    font-weight: 700;
+    font-size: 20px;
+    font-weight: 900;
     color: var(--red);
-    margin-top: 10px;
+    margin-top: 12px;
     letter-spacing: 0.3px;
   }
 
@@ -348,6 +352,20 @@
       font-style: italic;
       margin-bottom: 12px;
     }
+    .t-author-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .t-avatar-img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: top;
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,.12);
+    }
     .t-card .t-person {
       font-size: 13px;
       font-weight: 700;
@@ -416,22 +434,23 @@
       font-size: 22px;
       line-height: 1.3;
     }
-    .main-headline .sub-text { font-size: 14px; margin-top: 8px; }
-    .offer-label { font-size: 14px; margin-top: 8px; }
+    .main-headline .sub-text { font-size: 15px; margin-top: 8px; }
+    .offer-label { font-size: 17px; font-weight: 900; margin-top: 8px; }
 
     .cta-top { padding: 0 16px 18px; }
 
     /* Two-column collapses to single column, full-width */
     .content-row {
       flex-direction: column;
-      padding: 0 16px 20px;
+      padding: 0 0 20px; /* no side padding — let children handle their own */
       gap: 20px;
-      align-items: stretch; /* children stretch to full card width */
+      align-items: stretch;
       width: 100%;
     }
     .image-side {
       flex: none;
       padding-right: 0;
+      padding: 0 16px;
       width: 100%;
       align-items: center;
     }
@@ -449,22 +468,24 @@
     .col-divider { display: none; }
 
     .benefits-side {
-      padding-left: 0;
+      padding-left: 16px;
+      padding-right: 16px;
       width: 100%;
       min-width: 0;
+      box-sizing: border-box;
     }
-    .benefits-title { font-size: 19px; }
+    .benefits-title { font-size: 21px; }
     .title-accent { width: 32px; }
-    /* Checklist: readable but lighter than headline */
+    /* Checklist: clear and readable */
     .checklist li {
-      font-size: 16px;
-      padding: 8px 0;
+      font-size: 17px;
+      padding: 9px 0;
       font-weight: 400;
       gap: 12px;
     }
     .checklist li.highlight-item { font-weight: 700; }
-    .checklist li .chk { width: 22px; height: 22px; }
-    .checklist li .chk svg { width: 11px; height: 11px; }
+    .checklist li .chk { width: 23px; height: 23px; }
+    .checklist li .chk svg { width: 12px; height: 12px; }
 
     .urgency-note { font-size: 12px; padding: 0 4px; }
 
@@ -536,8 +557,8 @@
 
     <!-- MAIN HEADLINE -->
     <div class="main-headline">
-      <h1>Your Application Is Cleared.<br>Your Priority Spot Is Waiting.</h1>
-      <p class="sub-text">We are eligible to expedite your concealed carry application — complete it now from home, no office visits required.</p>
+      <h1>Your Application Is Cleared.</h1>
+      <p class="sub-text">We are <strong>eligible to expedite</strong> your concealed carry application — complete it now from home, no office visits required.</p>
       <!-- 50% OFF: present but supporting, not dominant -->
       <p class="offer-label">50% off — today only</p>
     </div>
@@ -566,7 +587,10 @@
               <div class="t-card">
                 <div class="t-stars">★★★★★</div>
                 <p class="t-quote">"I was worried it would be complicated. I finished everything in under 20 minutes from my kitchen table. Never had to leave the house."</p>
-                <p class="t-person">Martha K. — Florida</p>
+                <div class="t-author-row">
+                  <img src="testimonial-martha.png" alt="Martha K." class="t-avatar-img">
+                  <p class="t-person">Martha K. — Florida</p>
+                </div>
               </div>
             </div>
             <!-- Slide 3 -->
@@ -574,7 +598,10 @@
               <div class="t-card">
                 <div class="t-stars">★★★★★</div>
                 <p class="t-quote">"I had no idea you could skip the range visit. That was the one thing holding me back for two years. Wish I'd done this sooner."</p>
-                <p class="t-person">Sandra L. — Arizona</p>
+                <div class="t-author-row">
+                  <img src="testimonial-sandra.png" alt="Sandra L." class="t-avatar-img">
+                  <p class="t-person">Sandra L. — Arizona</p>
+                </div>
               </div>
             </div>
             <!-- Slide 4 -->
@@ -582,7 +609,10 @@
               <div class="t-card">
                 <div class="t-stars">★★★★★</div>
                 <p class="t-quote">"My wife and I did it together on a Sunday morning. The pre-filled forms made it almost too easy. Very glad we finally moved on this."</p>
-                <p class="t-person">Gary T. — Texas</p>
+                <div class="t-author-row">
+                  <img src="testimonial-gary.png" alt="Gary T." class="t-avatar-img">
+                  <p class="t-person">Gary T. — Texas</p>
+                </div>
               </div>
             </div>
           </div>
@@ -638,7 +668,7 @@
 
     <!-- BOTTOM CTA -->
     <div class="cta-row">
-      <p class="offer-label" style="margin-bottom:12px;">50% off — today only</p>
+      <p class="offer-label" style="margin-bottom:14px;">50% off — today only</p>
       <a href="#" class="cta-primary">Secure My Priority Spot Now <span class="cta-arrow">→</span></a>
       <p class="urgency-note">This offer disappears when you leave this page. <strong>Take advantage before laws change.</strong></p>
       <div class="trust-badges">
